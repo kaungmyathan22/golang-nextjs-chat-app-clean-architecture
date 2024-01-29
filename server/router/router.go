@@ -6,14 +6,12 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/kaungmyathan22/golang-nextjs-chat-app-clean-architecture/internal/user"
+	"github.com/kaungmyathan22/golang-nextjs-chat-app-clean-architecture/internal/ws"
 )
 
 var r *gin.Engine
 
-func InitRouter(userHandler *user.Handler,
-
-// wsHandler *ws.Handler
-) {
+func InitRouter(userHandler *user.Handler, wsHandler *ws.Handler) {
 	r = gin.Default()
 
 	r.Use(cors.New(cors.Config{
